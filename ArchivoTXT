@@ -1,0 +1,39 @@
+
+package lectortxt;
+    
+    import java.io.*;
+    import java.io.IOException;
+    import java.util.StringTokenizer;
+    import java.util.logging.Level;
+    import java.util.logging.Logger;
+
+public class ArchivoTXT {
+    
+    public String leerA (String url){
+        
+        String cadena = "";
+        
+        
+        try{
+            BufferedReader br= new BufferedReader(new FileReader(url));
+            String auxiliar= "";
+            String buffer;
+            
+            while((buffer =br.readLine()) != null){
+                auxiliar = auxiliar + buffer;
+            }
+            
+            cadena = auxiliar;
+        }   
+            
+            catch (FileNotFoundException ex){
+            System.out.println(" ARCHIVO NO ENCONTRADO ");
+            }
+        
+            catch (IOException ex){
+                
+            }return cadena;
+       
+        
+   }
+}
